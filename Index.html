@@ -1,0 +1,1116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>devəliSH | Creative IT Solutions</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Exo+2:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary: #ff003c;
+            --primary-dark: #cc0030;
+            --secondary: #00d9ff;
+            --dark: #0a0a14;
+            --darker: #05050a;
+            --light: #f0f0f0;
+            --gray: #888;
+        }
+        
+        body {
+            font-family: 'Exo 2', sans-serif;
+            background-color: var(--darker);
+            color: var(--light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        /* Header & Navigation */
+        .top-bar {
+            background-color: rgba(5, 5, 10, 0.95);
+            padding: 0 20px;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            border-bottom: 2px solid var(--primary);
+            box-shadow: 0 5px 20px rgba(255, 0, 60, 0.2);
+            backdrop-filter: blur(10px);
+        }
+        
+        .logo-container {
+            display: flex;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .logo {
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 900;
+            font-size: 2.2rem;
+            color: var(--primary);
+            text-decoration: none;
+            letter-spacing: 1px;
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            border-radius: 2px;
+        }
+        
+        .logo span {
+            color: var(--secondary);
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 30px;
+        }
+        
+        .nav-links a {
+            color: var(--light);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            padding: 5px 10px;
+            border-radius: 4px;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary);
+            background-color: rgba(255, 0, 60, 0.1);
+        }
+        
+        .menu-toggle {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--primary);
+        }
+        
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            background: linear-gradient(rgba(5, 5, 10, 0.9), rgba(5, 5, 10, 0.9)), 
+                        radial-gradient(circle at 20% 50%, rgba(255, 0, 60, 0.15) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 20%, rgba(0, 217, 255, 0.1) 0%, transparent 50%);
+            display: flex;
+            align-items: center;
+            padding: 100px 20px 50px;
+            position: relative;
+        }
+        
+        .hero-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        
+        .hero-text h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        
+        .hero-text h1 span {
+            color: var(--primary);
+        }
+        
+        .hero-text h1 .secondary {
+            color: var(--secondary);
+        }
+        
+        .hero-text p {
+            font-size: 1.2rem;
+            color: var(--gray);
+            margin-bottom: 30px;
+            max-width: 600px;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(90deg, var(--primary), var(--primary-dark));
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(255, 0, 60, 0.3);
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(255, 0, 60, 0.4);
+        }
+        
+        .hero-visual {
+            position: relative;
+            height: 500px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .floating-element {
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, var(--primary) 0%, transparent 70%);
+            opacity: 0.1;
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        
+        .code-display {
+            background-color: rgba(10, 10, 20, 0.8);
+            border-radius: 10px;
+            padding: 25px;
+            width: 100%;
+            max-width: 400px;
+            border-left: 4px solid var(--primary);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            z-index: 1;
+            position: relative;
+        }
+        
+        .code-display pre {
+            font-family: 'Courier New', monospace;
+            color: var(--secondary);
+            font-size: 0.9rem;
+            line-height: 1.4;
+            overflow-x: auto;
+        }
+        
+        .code-comment {
+            color: #6a9955;
+        }
+        
+        .code-function {
+            color: #dcdcaa;
+        }
+        
+        .code-string {
+            color: #ce9178;
+        }
+        
+        /* Project Form Section */
+        .project-form-section {
+            padding: 100px 20px;
+            background-color: var(--dark);
+            position: relative;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-header h2 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.8rem;
+            margin-bottom: 15px;
+            color: var(--light);
+        }
+        
+        .section-header h2 span {
+            color: var(--primary);
+        }
+        
+        .section-header p {
+            color: var(--gray);
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .form-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background-color: rgba(10, 10, 20, 0.8);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(255, 0, 60, 0.2);
+        }
+        
+        .form-header {
+            background: linear-gradient(90deg, var(--dark), var(--darker));
+            padding: 25px 40px;
+            border-bottom: 2px solid var(--primary);
+        }
+        
+        .form-header h3 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.8rem;
+            color: var(--secondary);
+            display: flex;
+            align-items: center;
+        }
+        
+        .form-header h3 i {
+            margin-right: 15px;
+            color: var(--primary);
+        }
+        
+        .project-form {
+            padding: 40px;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+        
+        .form-group {
+            margin-bottom: 15px;
+        }
+        
+        .form-group.full-width {
+            grid-column: 1 / span 2;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--light);
+            font-weight: 600;
+        }
+        
+        .form-group label span {
+            color: var(--primary);
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 15px;
+            background-color: rgba(5, 5, 10, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            color: var(--light);
+            font-family: 'Exo 2', sans-serif;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(255, 0, 60, 0.2);
+        }
+        
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        .form-row {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .form-row .form-group {
+            flex: 1;
+        }
+        
+        .budget-options {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 10px;
+        }
+        
+        .budget-option {
+            flex: 1;
+            min-width: 120px;
+        }
+        
+        .budget-option input {
+            display: none;
+        }
+        
+        .budget-option label {
+            display: block;
+            padding: 15px;
+            background-color: rgba(5, 5, 10, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .budget-option input:checked + label {
+            background-color: rgba(255, 0, 60, 0.2);
+            border-color: var(--primary);
+            color: var(--primary);
+            font-weight: 600;
+        }
+        
+        .budget-option label:hover {
+            border-color: var(--primary);
+        }
+        
+        .submit-button {
+            grid-column: 1 / span 2;
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        
+        .submit-btn {
+            background: linear-gradient(90deg, var(--primary), var(--primary-dark));
+            color: white;
+            border: none;
+            padding: 18px 50px;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            box-shadow: 0 5px 15px rgba(255, 0, 60, 0.3);
+        }
+        
+        .submit-btn i {
+            margin-right: 10px;
+        }
+        
+        .submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(255, 0, 60, 0.4);
+        }
+        
+        .submit-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+        
+        /* Form Response Messages */
+        .form-response {
+            grid-column: 1 / span 2;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+            display: none;
+        }
+        
+        .form-response.success {
+            background-color: rgba(0, 200, 83, 0.1);
+            border: 1px solid #00c853;
+            color: #00c853;
+            display: block;
+        }
+        
+        .form-response.error {
+            background-color: rgba(255, 0, 60, 0.1);
+            border: 1px solid var(--primary);
+            color: var(--primary);
+            display: block;
+        }
+        
+        /* Contact Section */
+        .contact-section {
+            padding: 100px 20px;
+            background-color: var(--darker);
+            position: relative;
+        }
+        
+        .contact-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 60px;
+        }
+        
+        .contact-info h3 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.2rem;
+            margin-bottom: 25px;
+            color: var(--light);
+        }
+        
+        .contact-info h3 span {
+            color: var(--primary);
+        }
+        
+        .contact-details {
+            margin-top: 40px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 25px;
+        }
+        
+        .contact-icon {
+            width: 60px;
+            height: 60px;
+            background-color: rgba(255, 0, 60, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+            color: var(--primary);
+            font-size: 1.5rem;
+        }
+        
+        .contact-text h4 {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+            color: var(--secondary);
+        }
+        
+        .contact-text p {
+            color: var(--gray);
+        }
+        
+        .contact-text a {
+            color: var(--light);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .contact-text a:hover {
+            color: var(--primary);
+        }
+        
+        .map-container {
+            border-radius: 10px;
+            overflow: hidden;
+            height: 500px;
+            border: 2px solid rgba(255, 0, 60, 0.3);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+        
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--darker);
+            padding: 60px 20px 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 50px;
+        }
+        
+        .footer-logo {
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 900;
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        
+        .footer-logo span {
+            color: var(--secondary);
+        }
+        
+        .footer-about p {
+            color: var(--gray);
+            margin-bottom: 25px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .social-links a {
+            width: 45px;
+            height: 45px;
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--light);
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--primary);
+            transform: translateY(-3px);
+        }
+        
+        .footer-heading {
+            font-size: 1.4rem;
+            color: var(--light);
+            margin-bottom: 25px;
+            font-family: 'Orbitron', sans-serif;
+        }
+        
+        .footer-links ul {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-links a {
+            color: var(--gray);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: var(--primary);
+        }
+        
+        .copyright {
+            text-align: center;
+            margin-top: 60px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            color: var(--gray);
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            .project-form {
+                grid-template-columns: 1fr;
+            }
+            
+            .form-group.full-width {
+                grid-column: 1;
+            }
+            
+            .submit-button {
+                grid-column: 1;
+            }
+            
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-content {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .menu-toggle {
+                display: block;
+            }
+            
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+            
+            .section-header h2 {
+                font-size: 2.2rem;
+            }
+            
+            .form-container {
+                padding: 0;
+            }
+            
+            .project-form {
+                padding: 30px 20px;
+            }
+            
+            .form-row {
+                flex-direction: column;
+                gap: 0;
+            }
+            
+            .budget-option {
+                min-width: 100%;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero {
+                padding: 100px 15px 50px;
+            }
+            
+            .hero-text h1 {
+                font-size: 2rem;
+            }
+            
+            .section-header h2 {
+                font-size: 1.8rem;
+            }
+            
+            .form-header {
+                padding: 20px 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Top Navigation Bar -->
+    <header class="top-bar">
+        <nav>
+            <div class="logo-container">
+                <a href="#" class="logo">dev<span>ə</span>liSH</a>
+            </div>
+            
+            <div class="menu-toggle" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#form">Project Inquiry</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>Creative IT Solutions for a <span>Digital World</span></h1>
+                <p>We blend cutting-edge technology with creative design to build digital experiences that transform businesses and exceed expectations.</p>
+                <a href="#form" class="cta-button">Start Your Project <i class="fas fa-arrow-right"></i></a>
+            </div>
+            
+            <div class="hero-visual">
+                <div class="floating-element"></div>
+                <div class="code-display">
+                    <pre><code><span class="code-comment">// Develish Development Approach</span>
+<span class="code-function">function</span> <span class="code-highlight">createDigitalSolution</span>(client, requirements) {
+  <span class="code-function">const</span> strategy = <span class="code-function">analyze</span>(client.business);
+  <span class="code-function">const</span> design = <span class="code-function">createUI</span>(strategy, requirements);
+  <span class="code-function">const</span> development = <span class="code-function">build</span>(design, <span class="code-string">"cutting-edge"</span>);
+  <span class="code-function">const</span> solution = <span class="code-function">deliver</span>(development, client);
+  
+  <span class="code-function">return</span> <span class="code-string">"Success!"</span>;
+}
+
+<span class="code-comment">// Let's build your next project</span>
+<span class="code-function">let</span> yourProject = <span class="code-function">createDigitalSolution</span>(
+  <span class="code-string">"Your Business"</span>, 
+  <span class="code-string">"Amazing Digital Presence"</span>
+);</code></pre>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Inquiry Form Section -->
+    <section class="project-form-section" id="form">
+        <div class="section-header">
+            <h2>Start Your <span>Website Project</span></h2>
+            <p>Fill out the form below with your project details. We'll analyze your requirements and get back to you with a customized plan.</p>
+        </div>
+        
+        <div class="form-container">
+            <div class="form-header">
+                <h3><i class="fas fa-file-alt"></i> Website Development Project Inquiry</h3>
+            </div>
+            
+            <form class="project-form" id="projectForm">
+                <!-- Form Response Messages -->
+                <div class="form-response" id="formResponse"></div>
+                
+                <div class="form-group">
+                    <label for="clientName">Full Name <span>*</span></label>
+                    <input type="text" id="clientName" class="form-control" placeholder="Enter your full name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="companyName">Company / Organization</label>
+                    <input type="text" id="companyName" class="form-control" placeholder="Enter your company name (if applicable)">
+                </div>
+                
+                <div class="form-group">
+                    <label for="contactNumber">Contact Number <span>*</span></label>
+                    <input type="tel" id="contactNumber" class="form-control" placeholder="Enter your contact number" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email Address <span>*</span></label>
+                    <input type="email" id="email" class="form-control" placeholder="Enter your email address" required>
+                </div>
+                
+                <div class="form-group full-width">
+                    <label for="projectType">Project Type <span>*</span></label>
+                    <select id="projectType" class="form-control" required>
+                        <option value="">Select project type</option>
+                        <option value="Corporate Website">Corporate Website</option>
+                        <option value="E-commerce Website">E-commerce Website</option>
+                        <option value="Web Application">Web Application</option>
+                        <option value="Portfolio Website">Portfolio Website</option>
+                        <option value="Landing Page">Landing Page</option>
+                        <option value="Website Redesign">Website Redesign</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+                
+                <div class="form-group full-width">
+                    <label for="projectDescription">Project Description <span>*</span></label>
+                    <textarea id="projectDescription" class="form-control" placeholder="Describe your project in detail. Include features, functionalities, target audience, and any specific requirements." required></textarea>
+                </div>
+                
+                <div class="form-group full-width">
+                    <label>Preferred Budget Range (INR) <span>*</span></label>
+                    <div class="budget-options">
+                        <div class="budget-option">
+                            <input type="radio" id="budget1" name="budget" value="10,000 - 50,000" required>
+                            <label for="budget1">10K - 50K</label>
+                        </div>
+                        <div class="budget-option">
+                            <input type="radio" id="budget2" name="budget" value="50,000 - 1,00,000">
+                            <label for="budget2">50K - 1L</label>
+                        </div>
+                        <div class="budget-option">
+                            <input type="radio" id="budget3" name="budget" value="1,00,000 - 3,00,000">
+                            <label for="budget3">1L - 3L</label>
+                        </div>
+                        <div class="budget-option">
+                            <input type="radio" id="budget4" name="budget" value="3,00,000+">
+                            <label for="budget4">3L+</label>
+                        </div>
+                        <div class="budget-option">
+                            <input type="radio" id="budget5" name="budget" value="To be discussed">
+                            <label for="budget5">To Discuss</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="timeline">Preferred Timeline <span>*</span></label>
+                    <select id="timeline" class="form-control" required>
+                        <option value="">Select timeline</option>
+                        <option value="1-2 months">1-2 months</option>
+                        <option value="2-3 months">2-3 months</option>
+                        <option value="3-4 months">3-4 months</option>
+                        <option value="4-6 months">4-6 months</option>
+                        <option value="6+ months">6+ months</option>
+                        <option value="Urgent (ASAP)">Urgent (ASAP)</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="referenceWebsites">Reference Websites (if any)</label>
+                    <textarea id="referenceWebsites" class="form-control" placeholder="Please share URLs of websites you like (optional)"></textarea>
+                </div>
+                
+                <div class="submit-button">
+                    <button type="submit" class="submit-btn" id="submitBtn">
+                        <i class="fas fa-paper-plane"></i> Submit Project Details
+                    </button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3>Get In <span>Touch</span></h3>
+                <p>Reach out to us for inquiries, collaboration, or just to say hello. Our team is ready to assist you with your digital transformation journey.</p>
+                
+                <div class="contact-details">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>Call Us</h4>
+                            <p><a href="tel:+919721061660">+91 97210 61660</a></p>
+                            <p><a href="tel:+919984839190">+91 99848 39190</a></p>
+                            <p><a href="tel:+918005196264">+91 80051 96264</a></p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>Email Us</h4>
+                            <p><a href="mailto:info.devilish@gmail.com">info.devilish@gmail.com</a></p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>Visit Us</h4>
+                            <p>Katra, Shravasti, Uttar Pradesh, India 271845</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28469.447287114472!2d81.92607172217048!3d27.18654061129763!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3998c3e4b6f7295f%3A0x7cd3eb30d715e308!2sKatra%2C%20Uttar%20Pradesh%20271845!5e0!3m2!1sen!2sin!4v1684326021181!5m2!1sen!2sin" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-about">
+                <div class="footer-logo">dev<span>ə</span>liSH</div>
+                <p>We are a creative IT company specializing in website development, digital solutions, and transformative technology experiences.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-links">
+                <h4 class="footer-heading">Quick Links</h4>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#projects">Portfolio</a></li>
+                    <li><a href="#form">Project Inquiry</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-links">
+                <h4 class="footer-heading">Our Services</h4>
+                <ul>
+                    <li><a href="#">Website Development</a></li>
+                    <li><a href="#">E-commerce Solutions</a></li>
+                    <li><a href="#">Web Applications</a></li>
+                    <li><a href="#">UI/UX Design</a></li>
+                    <li><a href="#">Digital Marketing</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <p>&copy; 2023 devəliSH IT Solutions. All rights reserved. | Katra, Shravasti, Uttar Pradesh, India 271845</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('menuToggle').addEventListener('click', function() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+        });
+        
+        // Form submission handling
+        document.getElementById('projectForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            // Get form elements
+            const submitBtn = document.getElementById('submitBtn');
+            const formResponse = document.getElementById('formResponse');
+            
+            // Get form values
+            const formData = {
+                timestamp: new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' }),
+                clientName: document.getElementById('clientName').value,
+                companyName: document.getElementById('companyName').value,
+                contactNumber: document.getElementById('contactNumber').value,
+                email: document.getElementById('email').value,
+                projectType: document.getElementById('projectType').value,
+                projectDescription: document.getElementById('projectDescription').value,
+                budget: document.querySelector('input[name="budget"]:checked')?.value || '',
+                timeline: document.getElementById('timeline').value,
+                referenceWebsites: document.getElementById('referenceWebsites').value
+            };
+            
+            // Validate required fields
+            if (!formData.clientName || !formData.contactNumber || !formData.email || 
+                !formData.projectType || !formData.projectDescription || !formData.budget || !formData.timeline) {
+                showFormResponse('error', 'Please fill in all required fields.');
+                return;
+            }
+            
+            // Disable submit button and show loading state
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Submitting...';
+            
+            // In a real implementation, you would send this data to your Google Sheets
+            // For now, we'll simulate a successful submission
+            setTimeout(() => {
+                // This is a simulation - in reality, you would use fetch() to send data to Google Apps Script
+                // Example of actual implementation:
+                /*
+                const scriptURL = 'YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL';
+                
+                fetch(scriptURL, {
+                    method: 'POST',
+                    body: JSON.stringify(formData),
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                })
+                .then(response => {
+                    if (response.ok) {
+                        showFormResponse('success', 'Thank you! Your project details have been submitted successfully. We will contact you within 24 hours.');
+                        document.getElementById('projectForm').reset();
+                    } else {
+                        throw new Error('Network response was not ok');
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    showFormResponse('error', 'There was a problem submitting your form. Please try again or contact us directly.');
+                })
+                .finally(() => {
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Submit Project Details';
+                });
+                */
+                
+                // Simulated successful submission
+                showFormResponse('success', 'Thank you! Your project details have been submitted successfully. We will contact you within 24 hours.');
+                document.getElementById('projectForm').reset();
+                
+                // Re-enable submit button
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Submit Project Details';
+                
+                // For demo purposes, log the form data to console
+                console.log('Form data to be sent to Google Sheets:', formData);
+                console.log('In a real implementation, this data would be sent to:');
+                console.log('Google Apps Script Web App URL for processing');
+                
+            }, 1500);
+        });
+        
+        // Function to show form response messages
+        function showFormResponse(type, message) {
+            const formResponse = document.getElementById('formResponse');
+            formResponse.textContent = message;
+            formResponse.className = 'form-response ' + type;
+            
+            // Scroll to response message
+            formResponse.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            
+            // Hide response after 8 seconds for errors, keep success messages
+            if (type === 'error') {
+                setTimeout(() => {
+                    formResponse.style.display = 'none';
+                }, 8000);
+            }
+        }
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    // Close mobile menu if open
+                    if (window.innerWidth <= 768) {
+                        document.getElementById('navLinks').style.display = 'none';
+                    }
+                    
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Highlight active section in navigation
+        window.addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('.nav-links a');
+            
+            let currentSection = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                
+                if (pageYOffset >= sectionTop - 100) {
+                    currentSection = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${currentSection}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
