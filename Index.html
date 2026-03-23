@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;900&amp;family=Manrope:wght@200;300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "secondary-fixed": "#e5e2e1",
+              "background": "#0e0e0e",
+              "primary-container": "#ff7856",
+              "tertiary-fixed": "#ff9738",
+              "inverse-on-surface": "#565554",
+              "surface-container-high": "#201f1f",
+              "surface-bright": "#2c2c2c",
+              "on-secondary": "#525151",
+              "on-error": "#490013",
+              "on-primary-container": "#490b00",
+              "primary-fixed-dim": "#ff5d33",
+              "on-error-container": "#ffb2b9",
+              "secondary-container": "#474746",
+              "secondary-dim": "#d6d4d3",
+              "outline-variant": "#494847",
+              "on-secondary-container": "#d2d0cf",
+              "error-dim": "#d73357",
+              "surface-container-highest": "#262626",
+              "on-primary-fixed-variant": "#5a1000",
+              "surface-container": "#1a1919",
+              "surface-variant": "#262626",
+              "on-tertiary": "#542a00",
+              "tertiary-fixed-dim": "#f78500",
+              "surface-container-low": "#131313",
+              "on-tertiary-fixed-variant": "#5b2d00",
+              "secondary": "#e5e2e1",
+              "on-background": "#ffffff",
+              "tertiary-dim": "#ef8100",
+              "surface": "#0e0e0e",
+              "on-primary": "#5e1100",
+              "outline": "#777575",
+              "on-surface-variant": "#adaaaa",
+              "on-surface": "#ffffff",
+              "surface-container-lowest": "#000000",
+              "surface-dim": "#0e0e0e",
+              "secondary-fixed-dim": "#d6d4d3",
+              "primary-dim": "#db3400",
+              "inverse-surface": "#fcf8f8",
+              "on-primary-fixed": "#000000",
+              "on-secondary-fixed": "#403f3f",
+              "error-container": "#a70138",
+              "on-secondary-fixed-variant": "#5c5b5b",
+              "primary": "#ff8f73",
+              "on-tertiary-fixed": "#2a1200",
+              "surface-tint": "#ff8f73",
+              "tertiary-container": "#ff8a00",
+              "error": "#ff6e84",
+              "tertiary": "#ff9f4d",
+              "on-tertiary-container": "#442100",
+              "primary-fixed": "#ff7856",
+              "inverse-primary": "#b52900"
+            },
+            fontFamily: {
+              "headline": ["Space Grotesk"],
+              "body": ["Manrope"],
+              "label": ["Space Grotesk"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #0e0e0e;
+            color: #ffffff;
+            cursor: crosshair;
+        }
+        .kinetic-gradient {
+            background: linear-gradient(135deg, #ff8f73 0%, #db3400 100%);
+        }
+        .glass-panel {
+            background: rgba(38, 38, 38, 0.6);
+            backdrop-filter: blur(20px);
+        }
+        .text-stroke {
+            -webkit-text-stroke: 1px #494847;
+            color: transparent;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-body selection:bg-primary selection:text-on-primary-container">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-[#0e0e0e]/60 backdrop-blur-xl dark:bg-[#0e0e0e]/60 shadow-[0_20px_40px_rgba(0,0,0,0.4)]">
+<div class="flex justify-between items-center px-6 py-4 w-full max-w-none">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#ff8f73] dark:text-[#ff8f73] cursor-pointer scale-95 transition-transform duration-200" data-icon="menu">menu</span>
+<span class="text-2xl font-black tracking-[-0.04em] text-[#ff8f73] font-['Space_Grotesk'] font-bold tracking-tighter uppercase">DEVILISH</span>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-[#ff8f73] font-bold font-['Space_Grotesk'] text-sm uppercase tracking-widest hover:text-[#ff8f73] transition-colors duration-300" href="#">Work</a>
+<a class="text-[#adaaaa] font-['Space_Grotesk'] text-sm uppercase tracking-widest hover:text-[#ff8f73] transition-colors duration-300" href="#">Services</a>
+<a class="text-[#adaaaa] font-['Space_Grotesk'] text-sm uppercase tracking-widest hover:text-[#ff8f73] transition-colors duration-300" href="#">About</a>
+<a class="text-[#adaaaa] font-['Space_Grotesk'] text-sm uppercase tracking-widest hover:text-[#ff8f73] transition-colors duration-300" href="#">Contact</a>
+</nav>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#ff8f73] dark:text-[#ff8f73] cursor-pointer scale-95 transition-transform duration-200" data-icon="alternate_email">alternate_email</span>
+</div>
+</div>
+</header>
+<main class="pt-24 overflow-x-hidden">
+<!-- Hero Section -->
+<section class="relative min-h-[795px] flex items-center px-6 md:px-12 py-24 bg-surface">
+<div class="absolute top-0 right-0 w-2/3 h-full opacity-20 pointer-events-none overflow-hidden">
+<div class="text-[20rem] font-black font-headline text-stroke leading-none absolute top-10 -right-20 select-none">PRECISION</div>
+</div>
+<div class="relative z-10 max-w-7xl w-full grid grid-cols-1 md:grid-cols-12 gap-12">
+<div class="md:col-span-8 flex flex-col items-start">
+<span class="font-label text-primary uppercase tracking-[0.2em] mb-6 text-sm">DIGITAL BRUTALISM REFINED</span>
+<h1 class="font-headline text-6xl md:text-8xl lg:text-[10rem] font-black leading-[0.85] tracking-[-0.05em] mb-12">
+                        DANGEROUSLY <br/> <span class="text-primary italic">GOOD</span> DESIGN.
+                    </h1>
+<p class="font-body text-xl md:text-2xl text-on-surface-variant max-w-2xl mb-12 leading-relaxed">
+                        We engineer high-tech digital experiences that provoke emotion and command attention. No templates. No safety nets. Just Devilish precision.
+                    </p>
+<div class="flex flex-wrap gap-6">
+<a class="bg-primary-container text-on-primary-container px-8 py-5 rounded-md font-headline font-bold uppercase tracking-widest text-sm hover:brightness-110 transition-all active:scale-95" href="#contact">
+                            Get in Touch
+                        </a>
+<a class="group flex items-center gap-3 text-on-surface font-headline font-bold uppercase tracking-widest text-sm py-5 px-4" href="#work">
+                            Explore Work
+                            <span class="material-symbols-outlined group-hover:translate-x-2 transition-transform" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+</div>
+<div class="md:col-span-4 flex flex-col justify-end">
+<div class="p-6 bg-surface-container-high rounded-lg border-l-4 border-primary">
+<span class="font-label text-xs text-on-surface-variant block mb-2 uppercase tracking-tighter">CURRENT STATUS</span>
+<div class="flex items-center gap-2 mb-4">
+<div class="w-2 h-2 rounded-full bg-primary animate-pulse"></div>
+<span class="font-headline font-bold text-lg">OPEN FOR Q3 COLLABS</span>
+</div>
+<p class="text-sm text-on-surface-variant leading-snug">
+                            Specializing in Web3, FinTech, and Avant-Garde Commerce.
+                        </p>
+</div>
+</div>
+</div>
+</section>
+<!-- Dynamic Shift Section (Separation without lines) -->
+<section class="bg-surface-container-low py-32 px-6 md:px-12" id="work">
+<div class="max-w-7xl mx-auto">
+<div class="flex flex-col md:flex-row justify-between items-end mb-24 gap-8">
+<div class="max-w-xl">
+<h2 class="font-headline text-5xl md:text-6xl font-black mb-8 leading-none tracking-tighter uppercase">SELECTED <span class="text-outline-variant">ARTIFACTS</span></h2>
+<p class="font-body text-on-surface-variant text-lg">
+                            Each project is a testament to our obsession with performance and visual impact.
+                        </p>
+</div>
+<div class="flex gap-4">
+<button class="w-12 h-12 rounded-lg bg-surface-container-highest flex items-center justify-center hover:bg-primary transition-colors hover:text-on-primary-container">
+<span class="material-symbols-outlined" data-icon="chevron_left">chevron_left</span>
+</button>
+<button class="w-12 h-12 rounded-lg bg-surface-container-highest flex items-center justify-center hover:bg-primary transition-colors hover:text-on-primary-container">
+<span class="material-symbols-outlined" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+</div>
+<!-- Bento Grid / Asymmetric Work Layout -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+<!-- Work Item 1 -->
+<div class="md:col-span-7 group relative overflow-hidden rounded-xl bg-surface-container-highest aspect-[16/10]">
+<img alt="Cyberpunk dashboard interface" class="w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-700" data-alt="High tech cyberpunk dashboard interface with neon elements" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAUx00ENjY3PsSq7w4Khi53SKNVMPbdTPcb3LxFM6R8BvWPfNK80W6NE0GTM0r30H3kcFwCjxwLu7wHBYurWVNvchRxrhQjEm5DStQytD5XTFq9zRfTCg20OFa8AYni1WO6FxFi3iNiG5IA0zCOEKsYSxW3a9oXsyDjDl9mvhFTDAtTfbFBiCaSv5NhI5IxmKalrb4mwLTuKuzM171o1txXKiqt5LfC-Pjc0rOuVfTkI8zc1_mBk4Nh-Id-PTA6G66g46q5rqC6fC8"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest to-transparent opacity-90"></div>
+<div class="absolute bottom-0 left-0 p-8 w-full flex justify-between items-end">
+<div>
+<span class="font-label text-primary text-xs uppercase tracking-widest mb-2 block">001 / FINTECH</span>
+<h3 class="font-headline text-3xl font-black uppercase">ONYX PROTOCOL</h3>
+<p class="text-on-surface-variant text-sm mt-2 max-w-sm">Decentralized liquidity platform for high-frequency traders.</p>
+</div>
+<span class="material-symbols-outlined text-4xl group-hover:text-primary transition-colors" data-icon="north_east">north_east</span>
+</div>
+</div>
+<!-- Work Item 2 -->
+<div class="md:col-span-5 group relative overflow-hidden rounded-xl bg-surface-container-highest aspect-square">
+<img alt="Vintage technology still life" class="w-full h-full object-cover opacity-50 group-hover:scale-105 transition-transform duration-700" data-alt="Abstract hardware components with orange lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAbxG3uV79PL2HkwIffI8nKeStHXnhFcBRVunpXDdjPIhcOIurMozj8uVfY7C6ciDomvDHNpG2GoMZkKxfJ2jEhl-5OObPfUm0WTQ0gISkEkk9kr0vNRIFh_YuV8Yrk9611s-Fo34EFSG_MW-q9BXE0f3lmFaI__kjBooXl-OPSwFdmsFNAJhUlwgH2aZmSLbZrYcDqZhC4G-jQg-dvcflEG9EKmotN6UPp2rmkNcxZjBnX9Xd1OW-Bk1oRcID0gstvlcqnbGu3QpI"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest to-transparent opacity-90"></div>
+<div class="absolute bottom-0 left-0 p-8">
+<span class="font-label text-primary text-xs uppercase tracking-widest mb-2 block">002 / HARDWARE</span>
+<h3 class="font-headline text-3xl font-black uppercase">CORE SYSTEM</h3>
+<p class="text-on-surface-variant text-sm mt-2">Physical hardware interface for quantum computing labs.</p>
+</div>
+</div>
+<!-- Work Item 3 -->
+<div class="md:col-span-4 group relative overflow-hidden rounded-xl bg-surface-container-highest aspect-square">
+<img alt="Abstract 3D glass sculpture" class="w-full h-full object-cover opacity-50 group-hover:scale-105 transition-transform duration-700" data-alt="Floating crystalline shards in a dark void" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBH82lZfcGWpeNi-OGvnN84KE7hNeQSVG6hCEzzAJrTkEb3lQFYUoUhgDc1AtCskPxnGRmPOd9Orpw8PELMQKokKIIk2Xs4NNh0kbX4HKYTLEziqHsMwn1AMgPP5iorOlSmlG_nR5bhkDYjxPWVQGZWXP3svuMU5cguXk_L6dTEKOT20nN-WMABs0AcOycN75qTkHCFuRcWuHMojnmKTrtTWhTJmJByoMo5JAsGdSqCqkvcXnwemwBve0zvGWDrptIlKRs9jGx95eY"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest to-transparent opacity-90"></div>
+<div class="absolute bottom-0 left-0 p-8">
+<span class="font-label text-primary text-xs uppercase tracking-widest mb-2 block">003 / BRANDING</span>
+<h3 class="font-headline text-3xl font-black uppercase">VOID LABS</h3>
+</div>
+</div>
+<!-- Work Item 4 -->
+<div class="md:col-span-8 group relative overflow-hidden rounded-xl bg-surface-container-highest aspect-[21/9]">
+<img alt="Satellite view of digital network" class="w-full h-full object-cover opacity-40 group-hover:scale-105 transition-transform duration-700" data-alt="Global connectivity map with dark orange data points" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCQCFT2vznV66zgjbN7pJrJ-IOxjMtaDwG_GalXYhDMlEGaleQoNBk0mZytHp7Fu0kngAVcr2bx7YeYBqzG7F66tAzi-pY4vcVBXBdRwfIAxkKPDQXhymRyHuFusYMpGP5gtLBw7SxpabEA6KopzyGe_zprx4Zy9tcmXxPXvNyO6yrDcwpCrrYpfGfynJ8bJ8Dq_JedloYVA3NNFCpsgs32-Zer68NN7w1Pu_yY84AhR-yMjRp6ChGM8VXWAbNztbdXmKyBHjByuOU"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest to-transparent opacity-90"></div>
+<div class="absolute bottom-0 left-0 p-8 w-full flex justify-between items-end">
+<div>
+<span class="font-label text-primary text-xs uppercase tracking-widest mb-2 block">004 / WEB DEV</span>
+<h3 class="font-headline text-3xl font-black uppercase">ETHER NETWORKS</h3>
+</div>
+<span class="material-symbols-outlined text-4xl group-hover:text-primary transition-colors" data-icon="arrow_outward">arrow_outward</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Services Section -->
+<section class="bg-surface py-32 px-6 md:px-12">
+<div class="max-w-7xl mx-auto flex flex-col md:flex-row gap-24">
+<div class="md:w-1/3">
+<h2 class="font-headline text-4xl font-black uppercase tracking-tighter mb-8 italic">OUR <br/>SERVICES</h2>
+<div class="w-20 h-1 bg-primary mb-8"></div>
+<p class="text-on-surface-variant leading-relaxed">
+                        We don't do "pretty." We do functional brutality. We build tools for those who want to leave a mark.
+                    </p>
+</div>
+<div class="md:w-2/3 space-y-16">
+<div class="group flex items-start gap-8 pb-16 border-b border-outline-variant/15">
+<span class="font-headline text-4xl font-bold text-outline-variant group-hover:text-primary transition-colors">01</span>
+<div>
+<h3 class="font-headline text-3xl font-black uppercase mb-4">UI/UX DESIGN</h3>
+<p class="text-on-surface-variant text-lg">Aggressive typography, intentional white space, and high-fidelity prototypes that define brand identity.</p>
+</div>
+</div>
+<div class="group flex items-start gap-8 pb-16 border-b border-outline-variant/15">
+<span class="font-headline text-4xl font-bold text-outline-variant group-hover:text-primary transition-colors">02</span>
+<div>
+<h3 class="font-headline text-3xl font-black uppercase mb-4">FULL-STACK DEV</h3>
+<p class="text-on-surface-variant text-lg">Scalable architectures using modern stacks. Fast, secure, and optimized for maximum precision.</p>
+</div>
+</div>
+<div class="group flex items-start gap-8">
+<span class="font-headline text-4xl font-bold text-outline-variant group-hover:text-primary transition-colors">03</span>
+<div>
+<h3 class="font-headline text-3xl font-black uppercase mb-4">CREATIVE STRATEGY</h3>
+<p class="text-on-surface-variant text-lg">Defining your digital voice in a crowded market. We find the spark in your void.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="bg-surface-container-low py-24 px-6 md:px-12 mb-24" id="contact">
+<div class="max-w-7xl mx-auto bg-primary rounded-xl p-12 md:p-24 relative overflow-hidden">
+<div class="absolute top-0 right-0 p-12 hidden md:block opacity-20">
+<span class="material-symbols-outlined text-[15rem]" data-icon="bolt">bolt</span>
+</div>
+<div class="relative z-10 max-w-2xl">
+<h2 class="font-headline text-5xl md:text-7xl font-black text-on-primary-container leading-none uppercase mb-8">READY TO BURN <br/>THE TEMPLATE?</h2>
+<p class="text-on-primary-container text-xl font-medium mb-12 opacity-80">Let's create something that makes the competition nervous.</p>
+<a class="inline-flex items-center gap-4 bg-on-primary-container text-primary px-10 py-6 rounded-md font-headline font-black uppercase tracking-widest text-lg hover:scale-105 transition-transform" href="mailto:hello@devilish.agency">
+                        START A PROJECT
+                        <span class="material-symbols-outlined" data-icon="rocket_launch">rocket_launch</span>
+</a>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#131313] dark:bg-[#131313] w-full py-12 px-6 mt-24">
+<div class="flex flex-col md:flex-row justify-between items-start gap-8 w-full border-t border-[#494847]/15 pt-12 max-w-7xl mx-auto">
+<div class="flex flex-col gap-6">
+<span class="font-['Space_Grotesk'] font-bold text-[#ff8f73] text-3xl tracking-tighter uppercase">DEVILISH</span>
+<p class="font-['Manrope'] text-sm tracking-normal text-[#adaaaa] max-w-xs">
+                    Engineering high-impact digital experiences for those who refuse the status quo.
+                </p>
+<div class="flex gap-4 mt-4">
+<a class="text-[#adaaaa] hover:text-white transition-all" href="#"><span class="material-symbols-outlined" data-icon="share">share</span></a>
+<a class="text-[#adaaaa] hover:text-white transition-all" href="#"><span class="material-symbols-outlined" data-icon="public">public</span></a>
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-12">
+<div class="flex flex-col gap-4">
+<h4 class="font-headline font-bold text-on-surface uppercase tracking-[0.1em] text-xs">OFFICE</h4>
+<p class="font-['Manrope'] text-sm tracking-normal text-[#adaaaa]">Address: 666 Ember St, Digital Void</p>
+<p class="font-['Manrope'] text-sm tracking-normal text-[#adaaaa]">Contact: hello@devilish.agency</p>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="font-headline font-bold text-on-surface uppercase tracking-[0.1em] text-xs">NAVIGATION</h4>
+<nav class="flex flex-col gap-2">
+<a class="font-['Manrope'] text-sm tracking-normal text-[#adaaaa] hover:text-white transition-all" href="#">Work</a>
+<a class="font-['Manrope'] text-sm tracking-normal text-[#adaaaa] hover:text-white transition-all" href="#">About</a>
+<a class="font-['Manrope'] text-sm tracking-normal text-[#adaaaa] hover:text-white transition-all" href="#">Careers</a>
+</nav>
+</div>
+</div>
+</div>
+<div class="max-w-7xl mx-auto mt-24 flex flex-col md:flex-row justify-between items-center gap-4">
+<span class="font-['Manrope'] text-xs tracking-normal text-[#adaaaa] uppercase">© 2024 DEVILISH PRECISION. ALL RIGHTS RESERVED.</span>
+<div class="flex gap-8">
+<a class="font-['Manrope'] text-xs tracking-normal text-[#adaaaa] hover:text-white transition-all" href="#">Privacy Policy</a>
+<a class="font-['Manrope'] text-xs tracking-normal text-[#adaaaa] hover:text-white transition-all" href="#">Terms of Service</a>
+</div>
+</div>
+</footer>
+</body></html>
